@@ -5,18 +5,18 @@ export async function sendMessageToGeminiStream(
   messages: Message[],
   onChunk: (chunk: string) => void
 ) {
-  const apiKey = process.env.GEMINI_API_KEY;
+  const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
   if (!apiKey) {
     throw new Error("Gemini API key is missing.");
   }
 
   const genAI = new GoogleGenAI({ apiKey });
-  
+
   const history = messages.slice(0, -1).map(m => ({
     role: m.role === 'user' ? 'user' : 'model',
     parts: [{ text: m.content }]
   }));
-  
+
   const lastMessage = messages[messages.length - 1].content;
 
   const response = await genAI.models.generateContentStream({

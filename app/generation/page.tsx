@@ -77,7 +77,7 @@ function AISandboxPage() {
   ]);
   const [aiChatInput, setAiChatInput] = useState('');
   const [aiEnabled] = useState(true);
-  const [isKiloSidebarOpen, setIsKiloSidebarOpen] = useState(false);
+  const [isKiloSidebarOpen, setIsKiloSidebarOpen] = useState(true);
   const searchParams = useSearchParams();
   const router = useRouter();
   const [aiModel, setAiModel] = useState(() => {
