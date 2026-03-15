@@ -1,0 +1,5 @@
+{
+  "name": "Kilo Chat IDE",
+  "description": "A professional VS Code-inspired AI chat interface with OpenRouter integration and multi-model support.",
+  "requestFramePermissions": []
+}
