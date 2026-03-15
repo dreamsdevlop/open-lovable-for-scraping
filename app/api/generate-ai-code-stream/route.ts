@@ -45,15 +45,15 @@ const openai = createOpenAI({
 });
 
 // OpenRouter support - https://openrouter.ai/
-const isUsingOpenRouter = !!process.env.OPENROUTER_API_KEY;
+const isUsingOpenRouter = !!process.env.NEXT_PUBLIC_OPENROUTER_API_KEY;
 const openrouter = createOpenAI({
-  apiKey: process.env.OPENROUTER_API_KEY,
+  apiKey: process.env.NEXT_PUBLIC_OPENROUTER_API_KEY,
   baseURL: 'https://openrouter.ai/api/v1',
 });
 
 console.log('[generate-ai-code-stream] OpenRouter config:', {
   isUsingOpenRouter,
-  hasOpenRouterKey: !!process.env.OPENROUTER_API_KEY
+  hasOpenRouterKey: !!process.env.NEXT_PUBLIC_OPENROUTER_API_KEY
 });
 
 // Helper function to analyze user preferences from conversation history
